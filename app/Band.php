@@ -9,6 +9,8 @@ class Band extends Model
 
     protected $fillable = ['name', 'start_date', 'website', 'still_active'];
 
+    protected $table = 'bands';
+
     public function albums() 
     {
 

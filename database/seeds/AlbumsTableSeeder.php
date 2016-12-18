@@ -17,7 +17,6 @@ class AlbumsTableSeeder extends Seeder
         $faker = Faker\Factory::create();
         $faker->addProvider(new App\Custom\Datasets\AlbumProvider($faker));
 
-
         // the limit corresponds to the # of unique album names defined in App/Custom/Datasets/AlbumProvider
         for ( $i = 0; $i<20; $i++ ) {
             $band_id = App\Band::all()->random()->id;

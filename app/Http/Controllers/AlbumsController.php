@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Band;
 use App\Album;
+use App\Http\Requests\AlbumsRequest;
 
 class AlbumsController extends Controller
 {
@@ -64,6 +65,15 @@ class AlbumsController extends Controller
 
     public function destroy(Album $album) {
         $album->delete();
+
+        return redirect('albums');
+    }
+
+    public function update($id, AlbumsRequest $request) {
+
+        $band = Album::findOrFail($id);
+
+        $band->update($request->all());
 
         return redirect('albums');
     }

@@ -13,6 +13,13 @@ class BandProvider extends \Faker\Provider\Base
         'The Rolling Stones',
         'Nirvana',
         'Pink Floyd',
+        'Lynyrd Skynyrd',
+        'The Eagles',
+        'The Jackson 5',
+        'The Who',
+        'Metallica',
+        'Guns n Roses',
+        'Black Sabbath',
     );
 
 

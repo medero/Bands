@@ -25,11 +25,10 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 $factory->define(App\Band::class, function (Faker\Generator $faker) {
     static $password;
 
-    #$faker->addProvider(new CompanyNameGenerator\FakerProvider($faker));
     $faker->addProvider(new App\Custom\Datasets\BandProvider($faker));
 
     return [
-        'name' => $faker->company,
+        'name' => $faker->unique()->bandname(),
         'start_date' => $faker->date(),
         'website' => $faker->url,
         'still_active' => 1,

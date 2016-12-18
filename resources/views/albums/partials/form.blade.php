@@ -12,7 +12,7 @@
         </div>
         <div class="form-group row">
             {!! Form::label('recorded_date', 'Recorded Date:') !!}
-            {!! Form::input('date', 'recorded_date', date('Y-m-d'), ['type' => 'date', 'class' => 'form-control' ]) !!}
+            {!! Form::input('date', 'recorded_date', null, ['type' => 'date', 'class' => 'form-control' ]) !!}
         </div>
         <div class="form-group row">
             {!! Form::label('release_date', 'Release Date:') !!}

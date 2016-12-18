@@ -7,7 +7,7 @@
  */ ?>
 
 @section('content')
-    {!! Form::model($album, ['method' => 'PATCH', 'action'=> ['BandsController@update', $album->id]]) !!}
+    {!! Form::model($album, ['method' => 'PATCH', 'action'=> ['AlbumsController@update', $album->id]]) !!}
     
     @include ('albums.partials.form')
 

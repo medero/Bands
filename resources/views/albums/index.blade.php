@@ -3,6 +3,17 @@
 @section('title', 'Home')
 
 @section('content')
+
+    <a class="btn" href="/albums/create">Create a new album</a>
+
+    <form class="form" action="/albums">
+        <div class="form-control row">
+            {{ Form::select('band_id', $bands, $band_id, $options) }}
+            <button class="btn">Filter</button>
+        </div>
+    </form>
+    <br/><br/>
+
     <table class="table table-inverse">
         <thead>
             <tr>
@@ -23,8 +34,14 @@
                 <td>{{$album->label}}</td>
                 <td>{{$album->genre}}</td>
                 <td>{{$album->recorded_date}}</td>
-                <td><a href="/bands/edit/{{$album->id}}">Edit</a></td>
-                <td><a href="/bands/delete/{{$album->id}}">Delete</a></td>
+                <td><a href="/albums/{{$album->id}}/edit">Edit</a></td>
+                <td>
+                    <form action="{{route('albums.destroy', [$album->id])}}" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <input type="submit" value="Delete">
+                    </form>
+                </td>
             </tr>
         @endforeach
         </tbody>

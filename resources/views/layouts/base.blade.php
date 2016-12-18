@@ -24,7 +24,6 @@
 
         <div id="navbar" class="navbar navbar-default">
                 <ul class="nav navbar-nav">
-                  <li><a href="/">Home</a></li>
                   <li><a href="/bands">Bands</a></li>
                   <li><a href="/albums">Albums</a></li>
                 </ul>

@@ -26,6 +26,16 @@ class BandsController extends Controller
 
     }
 
+    public function destroy(Band $band) {
+        $band->delete();
+
+        return redirect('bands');
+    }
+
+    public function show(Band $band) {
+        return view('bands.show', compact('band'));
+    }
+
     public function create() {
         return view('bands.create');
     }
@@ -45,10 +55,12 @@ class BandsController extends Controller
         return redirect('bands');
     }
 
+    /*
     public function delete(Band $band) {
 
         $band->delete();
 
         return redirect('bands');
     }
+     */
 }

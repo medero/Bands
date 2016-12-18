@@ -16,14 +16,14 @@ Route::get('/', function () {
 });
 
 Route::resource('bands', 'BandsController');
+Route::resource('albums', 'AlbumsController');
 
-/*
-Route::get('bands', 'BandsController@index');
-Route::get('bands/{$band}/edit', 'BandsController@edit');
-Route::get('bands/{$band}/delete', 'BandsController@delete');
-Route::post('bands/save/{id}', 'BandsController@save');
-Route::post('bands/create', 'BandsController@create');
-*/
-
-Route::get('albums', 'AlbumsController@index');
-Route::get('albums/edit/{band}', 'AlbumsController@edit');
+/* Deprecated in favor of ::resource
+    Route::get('bands', 'BandsController@index');
+    Route::get('bands/{$band}/edit', 'BandsController@edit');
+    Route::get('bands/{$band}/delete', 'BandsController@delete');
+    Route::post('bands/save/{id}', 'BandsController@save');
+    Route::post('bands/create', 'BandsController@create');
+    Route::get('albums', 'AlbumsController@index');
+    Route::get('albums/edit/{band}', 'AlbumsController@edit');
+ */

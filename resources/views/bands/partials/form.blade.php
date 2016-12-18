@@ -18,5 +18,7 @@
             {!! Form::label('still_active', 'Active:') !!}
             {{ Form::checkbox('still_active', '1') }}
         </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="form-group row">
+              <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
 

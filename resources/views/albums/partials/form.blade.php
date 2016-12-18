@@ -34,5 +34,7 @@
             {!! Form::label('genre', 'Genre:') !!}
             {!! Form::text('genre', null, ['class' => 'form-control' ]) !!}
         </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="form-group row">
+              <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
 

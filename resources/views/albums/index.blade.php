@@ -32,7 +32,7 @@
         <tbody>
         @foreach($albums as $album)
             <tr>
-                <td>{{$album->name}}</td>
+                <td><a href="/albums/{{$album->id}}">{{$album->name}}</a></td>
                 <td>{{$album->band()->first()->name}}</td>
                 <td>{{$album->label}}</td>
                 <td>{{$album->genre}}</td>

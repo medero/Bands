@@ -29,7 +29,14 @@ class AlbumsController extends Controller
     }
 
     public function show(Album $album) {
-        return view('albums.show', compact('album'));
+
+        $bands = $this->getBands();
+
+        return view('albums.show', array(
+            'album' => $album,
+            'bands' => $bands,
+            'options' => array(),
+        ));
     }
 
     public function create() {

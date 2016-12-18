@@ -22,7 +22,7 @@
         <tbody>
         @foreach($bands as $band)
             <tr>
-                <td>{{$band->name}}</td>
+                <td><a href="/bands/{{$band->id}}">{{$band->name}}</a></td>
                 <td>{{$band->start_date}}</td>
                 <td><a href="/bands/{{$band->id}}/edit">Edit</a></td>
                 <td>

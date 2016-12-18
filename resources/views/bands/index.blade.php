@@ -3,10 +3,14 @@
 @section('title', 'Home')
 
 @section('content')
+    
+    <a class="btn" href="/bands/create">Create a new band</a>
+
     <table class="table table-inverse">
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Start Date</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
@@ -15,10 +19,12 @@
         @foreach($bands as $band)
             <tr>
                 <td>{{$band->name}}</td>
-                <td><a href="/bands/edit/{{$band->id}}">Edit</a></td>
-                <td><a href="/bands/delete/{{$band->id}}">Delete</a></td>
+                <td>{{$band->start_date}}</td>
+                <td><a href="/bands/{{$band->id}}/edit">Edit</a></td>
+                <td><a href="/bands/{{$band->id}}/delete">Delete</a></td>
             </tr>
         @endforeach
         </tbody>
     </table>
+
 @stop

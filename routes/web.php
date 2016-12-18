@@ -15,10 +15,15 @@ Route::get('/', function () {
     return redirect('bands');
 });
 
+Route::resource('bands', 'BandsController');
+
+/*
 Route::get('bands', 'BandsController@index');
-Route::get('bands/create', 'BandsController@create');
-Route::get('bands/edit/{band}', 'BandsController@edit');
-Route::get('bands/delete/{band}', 'BandsController@delete');
+Route::get('bands/{$band}/edit', 'BandsController@edit');
+Route::get('bands/{$band}/delete', 'BandsController@delete');
 Route::post('bands/save/{id}', 'BandsController@save');
+Route::post('bands/create', 'BandsController@create');
+*/
 
 Route::get('albums', 'AlbumsController@index');
+Route::get('albums/edit/{band}', 'AlbumsController@edit');

@@ -4,7 +4,11 @@
 
 @section('content')
     
-    <a class="btn" href="/bands/create">Create a new band</a>
+    <div class="row clearfix">
+        <div class="pull-right">
+            <a class="btn btn-primary" href="/bands/create">Create a new band</a>
+        </div>
+    </div>
 
     <table class="table table-inverse">
         <thead>

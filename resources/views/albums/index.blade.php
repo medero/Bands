@@ -4,15 +4,18 @@
 
 @section('content')
 
-    <a class="btn" href="/albums/create">Create a new album</a>
 
-    <form class="form" action="/albums">
-        <div class="form-control row">
-            {{ Form::select('band_id', $bands, $band_id, $options) }}
-            <button class="btn">Filter</button>
+    <div class="row clearfix">
+        <div class="pull-right">
+            <a class="btn btn-primary" href="/albums/create">Create a new album</a>
         </div>
-    </form>
-    <br/><br/>
+        <form class="form" action="/albums">
+            <div class="form-group row">
+                {{ Form::select('band_id', $bands, $band_id, $options) }}
+                <button class="btn">Filter</button>
+            </div>
+        </form>
+    </div>
 
     <table class="table table-inverse">
         <thead>

@@ -21,3 +21,38 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Band::class, function (Faker\Generator $faker) {
+    static $password;
+
+    #$faker->addProvider(new CompanyNameGenerator\FakerProvider($faker));
+    $faker->addProvider(new App\Custom\Datasets\BandProvider($faker));
+
+    return [
+        'name' => $faker->company,
+        'start_date' => $faker->date(),
+        'website' => $faker->url,
+        'still_active' => 1,
+    ];
+});
+
+/*  Needed unique album names so moved this to AlbumsTableSeeder
+$factory->define(App\Album::class, function (Faker\Generator $faker) {
+    static $password;
+
+    $faker->addProvider(new App\Custom\Datasets\AlbumProvider($faker));
+    
+    $band_id = App\Band::all()->random()->id;
+
+    return [
+        'name' => $faker->unique()->album(),
+        'band_id' => $band_id,
+        'recorded_date' => $faker->date(),
+        'release_date' => $faker->date(),
+        'number_of_tracks' => rand(8, 15),
+        'label' => $faker->company,
+        'producer' => $faker->name,
+        'genre' => $faker->genre(),
+    ];
+});
+ */

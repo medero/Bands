@@ -2,16 +2,25 @@
 
 @section('title', 'Home')
 
-<?php /*
-    <form method="POST" action="/bands/save/{{$band->id}}">
- */ ?>
-
 @section('content')
 
-    {!! Form::model($band, ['method' => 'GET' ] ) !!}
+    <dl class="dl-horizontal">
+        <dt>Name</dt>
+        <dd>{{$band->name}}</dd>
     
-    @include ('bands.partials.form')
+        <dt>Start Date</dt>
+        <dd>{{$band->start_date}}</dd>
 
-    {!! Form::close() !!}
+        <dt>Website</dt>
+        <dd>{{$band->website}}</dd>
+
+        <dt>Active?</dt>
+        <dd>@if($band->still_active)
+            Yes
+        @else
+            No
+        @endif</dd>
+
+    </dl>
 
 @stop

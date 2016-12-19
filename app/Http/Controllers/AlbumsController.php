@@ -32,9 +32,12 @@ class AlbumsController extends Controller
 
         $bands = $this->getBands();
 
+        $band_name = Band::where('id', $album->band_id)->pluck('name')->first();
+
         return view('albums.show', array(
             'album' => $album,
             'bands' => $bands,
+            'band_name' => $band_name,
             'options' => array(),
         ));
     }

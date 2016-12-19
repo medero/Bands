@@ -2,16 +2,32 @@
 
 @section('title', 'Home')
 
-<?php /*
-    <form method="POST" action="/bands/save/{{$band->id}}">
- */ ?>
-
 @section('content')
 
-    {!! Form::model($album, ['method' => 'GET' ] ) !!}
+    <dl class="dl-horizontal">
+        <dt>Name</dt>
+        <dd>{{$album->name}}</dd>
     
-    @include ('albums.partials.form')
+        <dt>Band</dt>
+        <dd>{{$band_name}}</dd>
 
-    {!! Form::close() !!}
+        <dt>Recorded Date</dt>
+        <dd>{{$album->recorded_date}}</dd>
+
+        <dt>Release Date</dt>
+        <dd>{{$album->recorded_date}}</dd>
+
+        <dt>Number of Tracks</dt>
+        <dd>{{$album->number_of_tracks}}</dd>
+
+        <dt>Label</dt>
+        <dd>{{$album->label}}</dd>
+
+        <dt>Producer</dt>
+        <dd>{{$album->producer}}</dd>
+
+        <dt>Genre</dt>
+        <dd>{{$album->genre}}</dd>
+    </dl>
 
 @stop

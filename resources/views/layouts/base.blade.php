@@ -13,22 +13,19 @@
     </head>
     <body>
 
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    <a href="{{ url('/login') }}">Login</a>
-                    <a href="{{ url('/register') }}">Register</a>
-                </div>
-            @endif
-
+    <div class="jumbotron text-center">
+        <h1>Bands</h1>
+        <p>The coolest website on earth! Featuring all the bands and their respective albums. Ya dig?!</p>
+    </div>
 
     <div class="container">
 
-        <div id="navbar" class="navbar navbar-default">
+        <nav class="navbar navbar-default" role="navigation">
                 <ul class="nav navbar-nav">
                   <li><a href="/bands">Bands</a></li>
                   <li><a href="/albums">Albums</a></li>
                 </ul>
-        </div>
+        </nav>
 
         <div class="row">
 

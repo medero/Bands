@@ -7,33 +7,20 @@ namespace App\Custom\Datasets;
  */
 class BandProvider extends \Faker\Provider\Base
 {
-    protected static $bandNames = array(
-        'The Beatles',
-        'Led Zeppelin',
-        'The Rolling Stones',
-        'Nirvana',
-        'Pink Floyd',
-        'Lynyrd Skynyrd',
-        'The Eagles',
-        'The Jackson 5',
-        'The Who',
-        'Metallica',
-        'Guns n Roses',
-        'Black Sabbath',
-    );
 
+    protected static $bandNames = array(
+        'The Beatles', 
+        'Led Zeppelin', 
+        'Pink Floyd', 
+        'The Eagles', 
+        'Metallica', 
+        'The Who', 
+        'Lynyrd Skynyrd', 
+        'Guns n Roses', 
+    );
 
     public function bandname() {
         return static::randomElement(static::$bandNames);
     }
-
-    /*
-    public function companyName()
-    {
-        $format = static::randomElement(static::$companyNameFormats);
-
-        return $this->generator->parse($format);
-    }
-     */
 
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Carbon\Carbon;
 use App\Band;
 use App\Http\Requests\BandsRequest;
 
@@ -41,7 +42,14 @@ class BandsController extends Controller
     }
 
     public function store(BandsRequest $request) {
-        Band::create($request->all());
+
+        $all = $request->all();
+
+        if ( $all['start_date'] == '' ) {
+            $all['start_date'] = Carbon::now()->format('Y-m-d');
+        }
+
+        Band::create($all);
 
         return redirect('bands');
     }

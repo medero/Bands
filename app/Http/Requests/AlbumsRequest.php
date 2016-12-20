@@ -29,17 +29,17 @@ class AlbumsRequest extends FormRequest
 
             'band_id' => 'required|integer|exists:bands,id',
 
-            'recorded_date' => 'date',
+            'recorded_date' => 'sometimes|date',
 
-            'release_date' => 'date',
+            'release_date' => 'sometimes|date',
 
-            'number_of_tracks' => 'integer',
+            'number_of_tracks' => 'sometimes|integer',
 
-            'label' => 'string',
+            'label' => 'sometimes|string',
 
-            'producer' => 'string',
+            'producer' => 'sometimes|string',
 
-            'genre' => 'string',
+            'genre' => 'sometimes|string',
 
         ];
     }

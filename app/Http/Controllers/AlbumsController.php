@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Band;
 use App\Album;
 use App\Http\Requests\AlbumsRequest;
+use Carbon\Carbon;
 
 class AlbumsController extends Controller
 {
@@ -52,7 +53,24 @@ class AlbumsController extends Controller
     }
 
     public function store(AlbumsRequest $request) {
-        Album::create($request->all());
+
+        $all = $request->all();
+
+        // Default to today if no value 
+
+        if ( $all['release_date'] == '' ) {
+            $all['release_date'] = Carbon::now()->format('Y-m-d');
+        }
+
+        if ( $all['recorded_date'] == '' ) {
+            $all['recorded_date'] = Carbon::now()->format('Y-m-d');
+        }
+
+        if ($all['number_of_tracks'] == '' ) {
+            $all['number_of_tracks'] = 0;
+        }
+
+        Album::create($all);
 
         return redirect('albums');
     }

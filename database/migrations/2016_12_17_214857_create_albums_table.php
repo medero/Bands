@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Carbon\Carbon;
 
 class CreateAlbumsTable extends Migration
 {
@@ -17,12 +18,12 @@ class CreateAlbumsTable extends Migration
             $table->increments('id');
             $table->integer('band_id')->unsigned();
             $table->string('name');
-            $table->date('recorded_date');
-            $table->date('release_date');
-            $table->integer('number_of_tracks');
-            $table->string('label');
-            $table->string('producer');
-            $table->string('genre');
+            $table->date('recorded_date')->nullable();
+            $table->date('release_date')->nullable();
+            $table->integer('number_of_tracks')->nullable();
+            $table->string('label')->nullable();
+            $table->string('producer')->nullable();
+            $table->string('genre')->nullable();
             $table->timestamps();
         });
 

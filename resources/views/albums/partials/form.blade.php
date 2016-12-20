@@ -16,7 +16,7 @@
         </div>
         <div class="form-group row">
             {!! Form::label('release_date', 'Release Date:') !!}
-            {!! Form::input('date', 'release_date', date('Y-m-d'), ['type' => 'date', 'class' => 'form-control' ]) !!}
+            {!! Form::input('date', 'release_date', null, ['type' => 'date', 'class' => 'form-control' ]) !!}
         </div>
         <div class="form-group row">
             {!! Form::label('number_of_tracks', 'Number of Tracks:') !!}

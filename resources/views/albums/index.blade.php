@@ -23,8 +23,10 @@
                 <th>Name</th>
                 <th>Band</th>
                 <th>Label</th>
+                <th>Producer</th>
                 <th>Genre</th>
                 <th>Recorded Date</th>
+                <th>Date Created</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
@@ -35,8 +37,10 @@
                 <td><a href="/albums/{{$album->id}}">{{$album->name}}</a></td>
                 <td>{{$album->band()->first()->name}}</td>
                 <td>{{$album->label}}</td>
+                <td>{{$album->producer}}</td>
                 <td>{{$album->genre}}</td>
                 <td>{{$album->recorded_date}}</td>
+                <td>{{$album->created_at}}</td>
                 <td><a href="/albums/{{$album->id}}/edit">Edit</a></td>
                 <td>
                     <form action="{{route('albums.destroy', [$album->id])}}" method="POST">

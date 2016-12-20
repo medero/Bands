@@ -52,6 +52,7 @@ class AlbumsTableSeeder extends Seeder
      */
     public function createFromJson($json) {
         $faker = Faker\Factory::create();
+        $faker->addProvider(new App\Custom\Datasets\AlbumProvider($faker));
 
         foreach ($json as $row ) {
 
@@ -88,9 +89,9 @@ class AlbumsTableSeeder extends Seeder
                 'recorded_date' => $recorded_date,
                 'release_date' => $release_date,
                 'number_of_tracks' => $row['number_of_tracks'] ? $row['number_of_tracks'] : rand(5,10),
-                'label' => $row['label'] ? $row['label'] : $faker->company,
+                'label' => $row['label'] && $row['label'] != 'N/A' ? $row['label'] : $faker->company,
                 'producer' => $faker->name,
-                'genre' => $row['genre'] ? $row['genre'] : $faker->genre(),
+                'genre' => $row['genre'] && $row['label'] != 'N/A' ? $row['genre'] : $faker->genre(),
             ]);
         }
     }

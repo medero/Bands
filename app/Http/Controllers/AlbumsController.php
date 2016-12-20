@@ -51,7 +51,7 @@ class AlbumsController extends Controller
         ));
     }
 
-    public function store(Request $request) {
+    public function store(AlbumsRequest $request) {
         Album::create($request->all());
 
         return redirect('albums');

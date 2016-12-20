@@ -15,7 +15,7 @@
 
     <div class="jumbotron text-center">
         <h1>Bands</h1>
-        <p>The coolest website on earth! Featuring all the bands and their respective albums. Ya dig?!</p>
+        <p>The coolest website on earth! Featuring all the bands and their albums. Ya dig?!</p>
     </div>
 
     <div class="container">

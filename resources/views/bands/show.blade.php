@@ -12,7 +12,7 @@
         <dd>{{$band->start_date}}</dd>
 
         <dt>Website</dt>
-        <dd>{{$band->website}}</dd>
+        <dd><a target="_blank" href="{{$band->website}}">{{$band->website}}</a></dd>
 
         <dt>Active?</dt>
         <dd>@if($band->still_active)

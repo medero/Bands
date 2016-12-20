@@ -41,11 +41,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/dataTables.bootstrap.min.js"></script>
     <script>
-        $(function() { $('.table').DataTable({
-            'iDisplayLength': 20,
+    $(function() { 
+        $('.table').DataTable({
+            'iDisplayLength': 10,
             bInfo: false,
             bFilter:false,
-        }); });
+        }); 
+    });
     </script>
 
 </body>

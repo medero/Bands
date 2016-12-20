@@ -14,7 +14,7 @@
         <dt>Website</dt>
         <dd><a target="_blank" href="{{$band->website}}">{{$band->website}}</a></dd>
 
-        <dt>Active?</dt>
+        <dt>Active</dt>
         <dd>@if($band->still_active)
             Yes
         @else

@@ -27,9 +27,7 @@ class AlbumsRequest extends FormRequest
 
             'name' => 'required|min:1', // 1 since a band name could be as short as "U2", and technically its possible to have a 1 letter name?
 
-            //'band_id' => 'required|exists:bands,id',
-
-            'band_id' => 'integer',
+            'band_id' => 'required|integer|exists:bands,id',
 
             'recorded_date' => 'date',
 
